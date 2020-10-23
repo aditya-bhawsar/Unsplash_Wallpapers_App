@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration = AppBarConfiguration(findNavController(R.id.nav_host_fragment_main).graph)
         setupActionBarWithNavController(findNavController(R.id.nav_host_fragment_main), appBarConfiguration)
-
     }
 
     override fun onSupportNavigateUp(): Boolean {

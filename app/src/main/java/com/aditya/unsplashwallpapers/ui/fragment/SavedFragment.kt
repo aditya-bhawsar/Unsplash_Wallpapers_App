@@ -12,4 +12,5 @@ class SavedFragment: Fragment(R.layout.saved_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
+
 }

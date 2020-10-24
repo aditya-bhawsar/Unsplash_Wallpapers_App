@@ -33,7 +33,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context)
-            = Room.databaseBuilder(context, PhotoDatabase::class.java, "db_photo").build()
+            = Room.databaseBuilder(context, PhotoDatabase::class.java, "db_photo").allowMainThreadQueries().build()
 
     @Singleton
     @Provides

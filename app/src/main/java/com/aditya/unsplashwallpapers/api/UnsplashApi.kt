@@ -1,6 +1,9 @@
 package com.aditya.unsplashwallpapers.api
 
 import com.aditya.unsplashwallpapers.BuildConfig
+import com.aditya.unsplashwallpapers.model.PhotoEntity
+import com.aditya.unsplashwallpapers.util.UnSplashResponse
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query

@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Unsplash Wallpapers</string>
     <string name="no_saved_wallpapers_found">No Saved Wallpapers Found</string>
+    <string name="results_could_not_be_loaded">Results could NOT be loaded</string>
+    <string name="no_results_found_for_this_query">No results found for this query</string>
+    <string name="results_cant_be_loaded">Results Cant be loaded</string>
+    <string name="retry">Retry</string>
+    <string name="search">Search</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="saved">Saved</string>
 </resources>

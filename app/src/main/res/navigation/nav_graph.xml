@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
     app:startDestination="@id/mainFragment">
 
-
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.aditya.unsplashwallpapers.ui.fragment.MainFragment"
@@ -15,12 +14,19 @@
             android:id="@+id/action_mainFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.aditya.unsplashwallpapers.ui.fragment.DetailsFragment"
-        android:label="DetailsFragment" />
+        android:label="DetailsFragment" >
+        <argument
+            android:name="Photo"
+            app:argType="com.aditya.unsplashwallpapers.model.PhotoEntity" />
+    </fragment>
+
     <fragment
         android:id="@+id/savedFragment"
         android:name="com.aditya.unsplashwallpapers.ui.fragment.SavedFragment"
         android:label="SavedFragment" />
+
 </navigation>

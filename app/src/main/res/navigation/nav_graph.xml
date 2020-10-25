@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.aditya.unsplashwallpapers.ui.fragment.MainFragment"
-        android:label="MainFragment" >
+        android:label="Wallpapers Browser" >
         <action
             android:id="@+id/action_mainFragment_to_savedFragment"
             app:destination="@id/savedFragment" />
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.aditya.unsplashwallpapers.ui.fragment.DetailsFragment"
-        android:label="DetailsFragment" >
+        android:label="Details" >
         <argument
             android:name="Photo"
             app:argType="com.aditya.unsplashwallpapers.model.PhotoEntity" />
@@ -27,6 +27,10 @@
     <fragment
         android:id="@+id/savedFragment"
         android:name="com.aditya.unsplashwallpapers.ui.fragment.SavedFragment"
-        android:label="SavedFragment" />
+        android:label="Saved Wallpapers" >
+        <action
+            android:id="@+id/action_savedFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
 
 </navigation>

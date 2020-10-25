@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Unsplash Wallpapers</string>
+    <string name="app_name"><Wallpaper></Wallpaper> Browser</string>
     <string name="no_saved_wallpapers_found">No Saved Wallpapers Found</string>
     <string name="results_could_not_be_loaded">Results could NOT be loaded</string>
     <string name="no_results_found_for_this_query">No results found for this query</string>
@@ -9,4 +9,5 @@
     <string name="save">Save</string>
     <string name="delete">Delete</string>
     <string name="saved">Saved</string>
+    <string name="set_as_wallpaper">Set as Wallpaper</string>
 </resources>

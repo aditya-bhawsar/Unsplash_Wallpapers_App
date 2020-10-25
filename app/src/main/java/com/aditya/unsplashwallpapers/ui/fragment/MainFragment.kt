@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -15,6 +16,7 @@ import androidx.paging.LoadState
 import com.aditya.unsplashwallpapers.R
 import com.aditya.unsplashwallpapers.databinding.MainFragmentBinding
 import com.aditya.unsplashwallpapers.model.PhotoEntity
+import com.aditya.unsplashwallpapers.ui.activity.MainActivity
 import com.aditya.unsplashwallpapers.ui.adapter.PhotoAdapter
 import com.aditya.unsplashwallpapers.ui.adapter.PhotoLoadStateAdapter
 import com.aditya.unsplashwallpapers.viewModel.MainViewModel
@@ -61,7 +63,7 @@ class MainFragment :Fragment(R.layout.main_fragment), PhotoAdapter.OnItemClick{
                     listRv.isVisible = false
                     textViewEmpty.isVisible = true
                 }
-                else{ textViewEmpty.isVisible = true }
+                else{ textViewEmpty.isVisible = false }
             }
         }
     }
@@ -71,7 +73,20 @@ class MainFragment :Fragment(R.layout.main_fragment), PhotoAdapter.OnItemClick{
         inflater.inflate(R.menu.main_menu, menu)
 
         val searchItem = menu.findItem(R.id.action_search)
+        val savedItem = menu.findItem(R.id.saved_menu)
         val searchView = searchItem.actionView as SearchView
+
+        searchItem.setOnActionExpandListener(object : MenuItem.OnActionExpandListener{
+            override fun onMenuItemActionExpand(item: MenuItem?): Boolean {
+                savedItem.isVisible = false
+                return true
+            }
+
+            override fun onMenuItemActionCollapse(item: MenuItem?): Boolean {
+                savedItem.isVisible = true
+                return true
+            }
+        })
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {

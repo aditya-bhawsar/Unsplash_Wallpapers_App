@@ -6,4 +6,6 @@ import com.aditya.unsplashwallpapers.repository.ApplicationRepo
 
 class SavedViewModel @ViewModelInject constructor(private val applicationRepo: ApplicationRepo) : ViewModel(){
 
+    fun getAllPics() = applicationRepo.getAllPics()
+
 }

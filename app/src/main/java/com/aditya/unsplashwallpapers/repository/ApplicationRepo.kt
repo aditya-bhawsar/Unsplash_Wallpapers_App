@@ -25,4 +25,7 @@ class ApplicationRepo @Inject constructor(private val api: UnsplashApi, private 
     suspend fun addPic(photoEntity: PhotoEntity) = photoDao.insertPic(photoEntity)
     suspend fun deletePic(photoEntity: PhotoEntity) = photoDao.deletePic(photoEntity)
 
+    fun getAllPics() = photoDao.getAllPics()
+    fun getPic(id: String) = photoDao.getPic(id)
+
 }

@@ -12,15 +12,16 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(500)
-        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
+        Thread.sleep(750)
+        setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_main)
 
         findNavController(R.id.nav_host_fragment_main)
 
         val appBarConfiguration = AppBarConfiguration(findNavController(R.id.nav_host_fragment_main).graph)
         setupActionBarWithNavController(findNavController(R.id.nav_host_fragment_main), appBarConfiguration)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

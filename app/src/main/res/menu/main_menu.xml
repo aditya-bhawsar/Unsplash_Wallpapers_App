@@ -6,11 +6,12 @@
         android:id="@+id/saved_menu"
         android:title="@string/saved"
         android:icon="@drawable/ic_save"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 
     <item android:id="@+id/action_search"
         android:icon="@drawable/ic_search"
+        android:orderInCategory="99"
         android:title="@string/search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always|collapseActionView"

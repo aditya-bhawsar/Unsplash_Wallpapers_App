@@ -1,5 +1,6 @@
 package com.aditya.unsplashwallpapers.ui.fragment
 
+import android.app.WallpaperManager
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.net.Uri
@@ -8,6 +9,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import androidx.core.graphics.drawable.toBitmap
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -24,6 +26,8 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import java.io.IOException
+
 
 @AndroidEntryPoint
 class DetailsFragment: Fragment(R.layout.details_fragment) {
@@ -32,6 +36,8 @@ class DetailsFragment: Fragment(R.layout.details_fragment) {
     private val viewModel by viewModels<DetailsViewModel>()
 
     lateinit var photo: PhotoEntity
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -54,12 +60,21 @@ class DetailsFragment: Fragment(R.layout.details_fragment) {
                         progressBar.isVisible = false
                         textViewCreator.isVisible = true
                         textViewDescription.isVisible = (photo.description != null)
+                        setBtn.isVisible = true
+                        setBtn.setOnClickListener {
+                            resource?.let {
+                                val wallpaperManager = WallpaperManager.getInstance(requireContext())
+                                wallpaperManager.setBitmap(resource.toBitmap())
+                            }
+                        }
                         return false
                     }
                 })
                 .into(imageView)
 
             textViewDescription.text = photo.description
+
+
 
             val url = Uri.parse(photo.user.attributionUrl)
             val i = Intent(Intent.ACTION_VIEW, url)

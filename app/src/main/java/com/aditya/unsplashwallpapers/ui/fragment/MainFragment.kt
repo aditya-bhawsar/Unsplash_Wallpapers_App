@@ -91,6 +91,7 @@ class MainFragment :Fragment(R.layout.main_fragment), PhotoAdapter.OnItemClick{
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if(query!=null){
+
                     binding.listRv.scrollToPosition(0)
                     viewModel.searchPics(query)
                     searchView.clearFocus()

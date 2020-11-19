@@ -37,8 +37,6 @@ class DetailsFragment: Fragment(R.layout.details_fragment) {
 
     lateinit var photo: PhotoEntity
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)

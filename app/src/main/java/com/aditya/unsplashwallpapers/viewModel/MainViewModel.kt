@@ -10,7 +10,10 @@ import androidx.paging.cachedIn
 import com.aditya.unsplashwallpapers.repository.ApplicationRepo
 
 class MainViewModel @ViewModelInject constructor(private val repo: ApplicationRepo, @Assisted state: SavedStateHandle): ViewModel() {
+
     private val currentQuery = state.getLiveData("query", "wallpaper")
+
     val photo= currentQuery.switchMap { repo.getSearchResults(it).cachedIn(viewModelScope) }
+
     fun searchPics(query:String){ currentQuery.postValue(query) }
 }
